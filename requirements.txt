@@ -1,0 +1,14 @@
+certifi==2022.5.18.1
+charset-normalizer==2.0.12
+cleverbot==2.0.0
+cleverbotfree==2.3.4
+fake-useragent==0.1.11
+future==0.18.2
+greenlet==1.1.2
+idna==3.3
+pika==1.2.1
+playwright==1.22.0
+pyee==8.1.0
+requests==2.27.1
+urllib3==1.26.9
+websockets==10.1

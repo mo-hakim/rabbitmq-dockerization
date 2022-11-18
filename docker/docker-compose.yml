@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  rabbitmq:
+    image: rabbitmq:3.10-management
+    container_name: 'rabbitmq'
+    ports:
+        - "5672:5672"
+        - "15672:15672"
+    volumes:
+        - ./rabbitmq/:/etc/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "toor"
+    networks:
+      protected:
+        ipv4_address: 10.100.0.10
+  app:
+    environment:
+      RABBIT_HOST: rabbitmq
+      RABBIT_PORT: 5672
+      RABBIT_USER: "admin"
+      RABBIT_PASW: "toor"  
+    build:
+      context: ../.
+      dockerfile: /cleverbot.Dockerfile
+    container_name: cleverbot
+    links:
+      - rabbitmq
+    networks:
+      protected:
+        ipv4_address: 10.100.0.20
+
+networks:
+  protected:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.100.0.10/24
