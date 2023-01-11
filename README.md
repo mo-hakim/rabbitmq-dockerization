@@ -1,6 +1,6 @@
 # Deploying a Containerised Web Application
 
-The following structure depicts the structure of this repository
+This repo describes the process of creating a Containerized RabbitMQ & Python chatbot. It involves using Docker Compose to run the RabbitMQ stack and exposing it to a protected network with a subnet range, defining the build from a Dockerfile and pointing to RabbitMQ with credentials, identifying dependencies and installing them into the container, connecting the Chatbot by creating a Dockerfile with a Python image and placing it in the container, and deploying the stack using Docker Compose to receive responses from the Chatbot.
 
 ```
 ├── chat_curses_client.py
@@ -121,9 +121,9 @@ Now we have everything running, we can define the abovementioned variables accor
 python3.9 chat_curses_client.py
 ```
 
-This should appear as 3 windows, Log window at the top, Message window in the middle, Input box at the bottom, type `Hi!` and if everything is working, you should get a response from Cleverbot.
+This should appear as 3 windows, Log window at the top, Message window in the middle, Input box at the bottom, type `Hi!` and if everything is working, you should get a response from Cleverbot like in the below example.
 
-
+<img src="https://i.imgur.com/3ijMXQ4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 ## Useful resources
 
